@@ -43,3 +43,13 @@ end
 
 # Use debugger
 gem 'debugger', group: [:development, :test]
+
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0.0'
+  gem 'factory_girl_rails'
+end
+
+
+gem "therubyracer"
+gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
+gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
