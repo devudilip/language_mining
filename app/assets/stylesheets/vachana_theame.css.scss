@@ -1,0 +1,533 @@
+
+span.hilite1 {
+  background:#3A87AD;
+  font-family: arial;
+  font-size: 15px;
+  font-weight: bold;
+  color: white !important;
+}
+
+.vacha_lists{
+  height: 500px;
+  overflow-y: auto;
+  // width: 600px;
+  margin-left: 40px;
+}
+
+.word_lists{
+  height: 500px;
+  overflow-y: auto;
+
+}
+
+.vachana_search_form{
+
+  text-align: center;
+}
+
+.total_count{
+
+  margin-bottom: 10px;
+}
+
+.graph-space{
+  height: 625px;
+  overflow-y: auto;
+
+  background: none repeat scroll 0 0 #E6E6E6;
+
+}
+
+.back-button-show {
+  margin: 0 0 9px 40px;
+}
+
+.vachanakaara-list a:hover{
+  background-color: wheat;
+  color: #006DCC;
+  font-size: 17px;
+}
+.btn-primary:visited{
+  color: #FFFFFF;
+}
+
+
+.highcharts-axis-labels .tspan
+{
+  display:none;
+}
+.test
+{
+  display:none;
+}
+
+.highcharts-axis-labels text tspan
+{
+  cursor:pointer;
+}
+
+
+.load-more-vachanas{
+  clear: both;
+  float: right;
+  color: #0044CC;
+}
+
+.footer{
+  margin-top: 20px;
+}
+
+
+.search_box{
+  width: 100%;
+  text-align: center;
+}
+
+
+.start_letter_header{
+  font-size: 20px;
+}
+
+.vowels_count{
+  font-size: 10px;
+}
+
+
+
+
+.box {
+  background: none repeat scroll 0 0 #FFFFFF;
+  float: left;
+  height: 200px;
+  margin: 0 10px 10px 0;
+  width: 150px;
+  border:1px solid #ccc;
+  border-bottom:2px solid #bbb;
+  border-top:1px solid #ddd;
+  border-radius:10px;
+  -webkit-border-radius:10px;
+  -moz-border-radius:10px;
+
+  h5{
+    text-align: center;
+    overflow: hidden;
+    margin: 5px;
+  }
+
+  .keyword_used_count{
+    height: 100%;
+    overflow: hidden;
+    margin-left: 10px;
+    margin-top: 20px;
+  }
+
+  /* .vachana-concord-box{
+  height: 90%;
+  margin: 5px;
+  overflow: hidden;
+  } */
+
+  .vachana-show-box{
+    height: 140px;
+    margin: 5px;
+    overflow: hidden;
+  }
+
+}
+
+.vachanakaara-box{
+  overflow: hidden;
+
+}
+
+/*==================================================
+* Effect 5
+* ===============================================*/
+.effect5
+{
+  position: relative;
+}
+.effect5:before, .effect5:after
+{
+  z-index: -1;
+  position: absolute;
+  content: "";
+  bottom: 25px;
+  left: 10px;
+  width: 50%;
+  top: 80%;
+  max-width:300px;
+  background: #777;
+  -webkit-box-shadow: 0 35px 20px #777;
+  -moz-box-shadow: 0 35px 20px #777;
+  box-shadow: 0 35px 20px #777;
+  -webkit-transform: rotate(-8deg);
+  -moz-transform: rotate(-8deg);
+  -o-transform: rotate(-8deg);
+  -ms-transform: rotate(-8deg);
+  transform: rotate(-8deg);
+}
+.effect5:after
+{
+  -webkit-transform: rotate(8deg);
+  -moz-transform: rotate(8deg);
+  -o-transform: rotate(8deg);
+  -ms-transform: rotate(8deg);
+  transform: rotate(8deg);
+  right: 10px;
+  left: auto;
+}
+
+.results_list_div{
+  text-align: center;
+  a:hover{
+    text-decoration:none !important;
+    color: black !important;
+  }
+}
+
+
+.click_for_more{
+  clear: both;
+  padding: 25px 0 0;
+}
+
+.btn-count-size{
+  height: 25px;
+  width: 100px;
+}
+
+
+.vachana-pop{
+  p{
+    background: url("/assets/bg-pattern.png") repeat scroll 0 0 transparent;
+  }
+}
+
+
+.about-paragraph{
+  border: 1px solid #F2F1F0;
+  min-height: 700px;
+  // width: 550px;
+  p{
+    padding: 10px;
+
+  }
+}
+
+
+.aksharamaale{
+  border: 2px solid #F2F1F0;
+  padding: 10px;
+}
+
+.navbar-inner{
+  a{
+    sub{
+      font-size: 50%;
+    }
+  }
+}
+
+.vachana-wiki-info{
+  width: 100%;
+  margin: auto;
+  text-align: left;
+  hr{
+    clear: both;
+    margin: 0px;
+  }
+}
+
+.namma-bagge{
+  width: 48%;
+  float: left;
+
+}
+
+.avrutthi-update{
+  width: 48%;
+  float: left;
+  margin-left: 5px;
+}
+
+
+.rand-vachana{
+  border: 2px solid #F2F1F0;
+  margin: auto;
+  padding: 5px;
+  text-align: center;
+  width: 50%;
+}
+
+.wiki-info-kan{
+  float: left;
+  margin: auto;
+  text-align: left;
+  width: 48%;
+}
+
+.wiki-info-eng{
+  float: right;
+  margin: auto;
+  text-align: left;
+  width: 48%;
+}
+
+.vachanakaara-name{
+  height: 25px;
+  color:  #0044CC;
+  overflow: hidden;
+}
+
+.vachana-number-search{
+
+  text-align: right;
+  width: 79%;
+
+}
+
+
+.back-button{
+  float: right;
+  margin: 1%;
+  width: 4%;
+}
+/*
+.advance_search_div{
+width: 100%;
+.praramba_para{
+float: left;
+width: 100%;
+}
+
+}*/
+
+.advance_search_div{
+  text-align: center;
+  width: 100%;
+}
+
+
+.advanced_search_box{
+  margin: -2% 0 1%;
+  text-align: center;
+  width: 95%;
+  a{
+    color: #0044CC;
+    border: 2px solid #F8F8F8;
+  }
+}
+
+.social-nav-right {
+  padding: 10px !important;
+}
+
+.alert-error {
+  text-align: center;
+  padding: 10px !important;
+}
+.vachanakaara-name a{
+  color: #0044CC ;
+
+}
+.vachanakaara-parichaya{
+  margin-top: 10px;
+  margin-left: 10px;
+  font-size: 12px;
+  overflow: hidden;
+
+}
+
+.assign_vachanakaaras{
+  height: 550px;
+  overflow-y: scroll;
+}
+
+.list-assigned-vachanakaaras{
+  max-height: 550px;
+  overflow-y: scroll;
+  margin-left: 5px;
+  border: #F5F5F5 solid 1px;
+}
+
+.review-box{
+  border: 3px solid #F6F6F6;
+  height: auto;
+  padding: 2%;
+  width: 45%;
+  float: left;
+
+  textarea{
+    height: 240px;
+    width: 340px;
+  }
+
+
+
+}
+
+.original-vachana-box{
+  border: 1px solid #E3E3E3;
+  float: left;
+  height: 250px;
+  overflow: auto;
+  padding-left: 7px;
+  width: 100%;
+
+}
+
+.original-vachana-input{
+  border: 1px solid #E3E3E3;
+  height: 20px;
+  margin: 0 0 0 10px;
+  padding: 1%;
+}
+
+.original-vachana-lable{
+  margin: 0 0 0 10px;
+}
+
+
+.reviewer-left-table{
+  border: 2px solid #F2F1F0;
+  max-height: 300px;
+  overflow: auto;
+  padding: 3%;
+  text-align: left;
+}
+
+
+.review-vachana-text {
+
+}
+
+.review-vachana-lable{
+
+}
+
+.review-vachana-box{
+
+}
+
+
+.review-vachana-submit{
+  clear: both;
+  padding-top: 2%;
+}
+
+
+.reviewer-left-box{
+  // border: 2px solid #F2F1F0;
+  max-height: 800px;
+  padding: 3px;
+  text-align: center;
+}
+
+
+.review_button{
+  float: left;
+  margin-left: 1%;
+  width: 40%;
+}
+
+
+
+.review-comment{
+  clear:both;
+  textarea{
+    height: 83px;
+    width: 749px;
+  }
+}
+.modal-footer-left{
+  float:left;
+}
+
+.page-note{
+  border: 2px solid #f2f1f0;
+  margin-left: 25%;
+  text-align: center;
+  width: 50%;
+}
+
+.col-centered{
+  float: none;
+  margin: 0 auto;
+  width: 25%;
+}
+
+.brand:hover, .advanced_search_box a:hover{
+  background-color: #F5F2F0;
+}
+
+.vachanakaara-icon-link:hover{
+  background-color: #F5F2F0;
+}
+.vachanakaara-icon-link{
+  margin: 5px;
+}
+.aksharamaale a:hover, .vachanakaara-name a:hover{
+  background-color: #F5F2F0;
+  color: #0045CC;
+}
+
+
+.vachana-full-search {
+  text-align: center;
+  width: 100%;
+}
+
+
+
+.vachana_sangraha_heading{
+  margin: 10px;
+  text-align: center;
+  width: 100%;
+}
+
+.sangraha_menu{
+  font-size: 20px;
+  margin: 10px;
+  text-align: center;
+  width: 100%;
+
+}
+
+.sangraha_desc{
+  text-align: center;
+  width: 100%;
+}
+
+
+.letter_list{
+  font-size: 17px;
+  margin: 10px;
+}
+
+
+
+/*font awesome overriding*/
+
+.fa-facebook:hover{
+  color: #3B5998;
+}
+
+.fa-twitter:hover{
+  color: #55ACEE;
+}
+.fa-google-plus:hover{
+  color: #DD4B39;
+}
+.fa-check:hover{
+  color:	#4E8109;
+}
+.fa-user{
+  font-size: 20px;
+}
+.fa-user:hover{
+  color: #3B5998;
+}
+.alert{
+  text-align: center;
+}
