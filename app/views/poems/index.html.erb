@@ -1,7 +1,7 @@
 <% @poems.each do |poem| %>
 
-    <a href="#myModal_<%= poem.id %>" role="button"  data-toggle="modal" >
-      <div class="box effect5">
+    <a href="#myModal_<%= poem.id %>" role="button" data-toggle="modal" class="modal-pop-a">
+    <div class="box effect5">
         <div class="vachana-concord-box">
           <div class="vachana-show-box">
             <span>  <%=  poem.poem_text %> </span>
@@ -45,3 +45,4 @@
 
 
 <% end %>
+
