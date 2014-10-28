@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(version: 20141022181724) do
     t.integer "author_id"
     t.string "name"
     t.text "poem_text"
+    t.integer "original_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
