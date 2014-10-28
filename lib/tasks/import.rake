@@ -18,8 +18,13 @@ task :import_poems_from_csv => :environment do
   file_name = Rails.root.to_s+"/lib/keerthane.csv"
   puts "started"
   CSV.foreach(file_name, :col_sep => ",", :headers => true) do |row|
-    Poem.create(poem_text: row[1], author_id: row[2], original_id: row[4], book_id: 1)
-    puts ">>>>>>>>>>>>>.."
+    author = Author.find_by(original_id: row[2])
+    begin
+      Poem.create(poem_text: row[1], author_id: author.id, original_id: row[4], book_id: 1) if author
+      puts ">>>>>>>>>>>>>.."
+    rescue
+      p "Errorrrrrrrrrrrr"
+    end
   end
   puts "End "
 end

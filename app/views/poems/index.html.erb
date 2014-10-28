@@ -1,10 +1,9 @@
 <div class="search_box">
   <%= form_tag poems_path, name: "search_poem", id: "main_search", method: :get do %>
-      <%= select_tag "auhtor", options_from_collection_for_select(Author.all, "id", "name", params[:auhtor]), prompt: "#{t :all}" %>
+      <%= select_tag "author", options_from_collection_for_select(Author.all, "id", "name", params[:author]), prompt: "#{t :all}" %>
       <%= submit_tag "#{t :search}", :disable_with => "#{t :please_wait}...", :class => 'btn btn-primary' %>
   <% end %>
 </div>
-
 
 
 <div class="results_list_div ">
