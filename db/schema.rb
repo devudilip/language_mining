@@ -14,14 +14,15 @@
 ActiveRecord::Schema.define(version: 20141022181724) do
 
   create_table "authors", force: true do |t|
-    t.string   "pen_name"
-    t.string   "birth_place"
-    t.string   "name"
-    t.boolean  "sex"
-    t.string   "spouse"
-    t.string   "time_period"
-    t.integer  "poems_found"
-    t.text     "information"
+    t.string "pen_name"
+    t.string "birth_place"
+    t.string "name"
+    t.boolean "sex"
+    t.string "spouse"
+    t.string "time_period"
+    t.integer "poems_found"
+    t.text "information"
+    t.integer "original_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -29,36 +30,36 @@ ActiveRecord::Schema.define(version: 20141022181724) do
   add_index "authors", ["name"], name: "index_authors_on_name", using: :btree
 
   create_table "books", force: true do |t|
-    t.integer  "author_id"
-    t.integer  "language_id"
-    t.string   "name"
-    t.string   "book_name"
-    t.string   "book_volume"
-    t.string   "publisher"
-    t.string   "published_year"
+    t.integer "author_id"
+    t.integer "language_id"
+    t.string "name"
+    t.string "book_name"
+    t.string "book_volume"
+    t.string "publisher"
+    t.string "published_year"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "daily_poems", force: true do |t|
-    t.integer  "poem_id"
-    t.date     "published_date"
+    t.integer "poem_id"
+    t.date "published_date"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "languages", force: true do |t|
-    t.string   "language_code"
-    t.string   "name"
+    t.string "language_code"
+    t.string "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "poems", force: true do |t|
-    t.integer  "book_id"
-    t.integer  "author_id"
-    t.string   "name"
-    t.text     "poem_text"
+    t.integer "book_id"
+    t.integer "author_id"
+    t.string "name"
+    t.text "poem_text"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
