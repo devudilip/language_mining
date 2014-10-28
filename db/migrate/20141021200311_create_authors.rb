@@ -9,7 +9,7 @@ class CreateAuthors < ActiveRecord::Migration
       t.string :time_period
       t.integer :poems_found
       t.text :information
-
+      t.integer :original_id
       t.timestamps
     end
     add_index :authors, :name
