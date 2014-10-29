@@ -1,0 +1,5 @@
+  kn:
+    will_paginate:
+      previous_label: "ಹಿಂದೆ"
+      next_label: "ಮುಂದೆ"
+      page_gap: "&hellip;"
