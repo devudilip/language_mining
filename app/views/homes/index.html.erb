@@ -2,16 +2,14 @@
   <h1> <%= t :menu_brand_name %> </h1>
 </div>
 
-
 <div class="sangraha_desc">
 
   <div class="rand-vachana">
     <h3> <%= t :today_poem %> </h3>
-
     <p>
-      <%#= raw @vachana.vachana.gsub(/\n/, '<br />') %>
+      <%= raw @poem.poem_text.gsub(/\n/, '<br />') %>
     </p>
-    <span class="vachanakaara-name" style="margin-left:20%;"> --- <%#= @vachana.vachanakaara.name %> </span>
+    <span class="vachanakaara-name" style="margin-left:20%;"> --- <%= @poem.author.name %> </span>
   </div>
 
 </div>
