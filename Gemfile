@@ -56,3 +56,4 @@ gem "twitter-bootstrap-rails"
 gem 'will_paginate'
 gem "font-awesome-rails"
 gem 'newrelic_rpm'
+gem 'google-analytics-rails'
