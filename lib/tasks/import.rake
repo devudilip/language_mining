@@ -6,7 +6,7 @@ task :import_authors_from_csv => :environment do
   file_name = Rails.root.to_s+"/lib/daasa.csv"
   puts "started"
   CSV.foreach(file_name, :col_sep => ",", :headers => true) do |row|
-    Author.create(original_id: row[0], name: row[1], information: row[2])
+    Author.create(original_id: row['original_id'], name: row['name'], information: row['information'])
     puts ">>>>>>>>>>>>>.."
   end
   puts "End "
@@ -18,12 +18,17 @@ task :import_poems_from_csv => :environment do
   file_name = Rails.root.to_s+"/lib/keerthane.csv"
   puts "started"
   CSV.foreach(file_name, :col_sep => ",", :headers => true) do |row|
-    author = Author.find_by(original_id: row[2])
+    author = Author.find_by(original_id: row['author_id'])
     begin
-      Poem.create(poem_text: row[1], author_id: author.id, original_id: row[4], book_id: 1) if author
+      if author
+        Poem.create(poem_text: row['poem_text'], author_id: author.id, original_id: row['original_id'])
+      else
+        p row['author_id']
+      end
       puts ">>>>>>>>>>>>>.."
     rescue
-      p "Errorrrrrrrrrrrr"
+      p "Errorrrrrrrrrrrrd"
+      p author
     end
   end
   puts "End "
