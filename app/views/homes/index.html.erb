@@ -4,12 +4,14 @@
 
 <div class="sangraha_desc">
 
-  <div class="rand-vachana">
-    <h3> <%= t :today_poem %> </h3>
-    <p>
-      <%= raw @poem.poem_text.gsub(/\n/, '<br />') %>
-    </p>
-    <span class="vachanakaara-name" style="margin-left:20%;"> --- <%= @poem.author.name %> </span>
-  </div>
+  <% if @poem %>
+      <div class="rand-vachana">
+        <h3> <%= t :today_poem %> </h3>
+        <p>
+          <%= raw @poem.poem_text.gsub(/\n/, '<br />') %>
+        </p>
+        <span class="vachanakaara-name" style="margin-left:20%;"> --- <%= @poem.author.name %> </span>
+      </div>
+  <% end %>
 
 </div>
