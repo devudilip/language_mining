@@ -3,7 +3,7 @@ require 'csv'
 
 desc "import kagga from csv"
 task :import_kagga_from_csv => :environment do
-  file_name = Rails.root.to_s + "/lib/kagga_original.csv"
+  file_name = Rails.root.to_s + "/lib/kagga_main.csv"
   puts "started"
   @author = Author.create(name: 'ಡಾ. ಡಿ.ವಿ.ಗುಂಡಪ್ಪ')
   CSV.foreach(file_name, :col_sep => ",", :headers => false) do |row|
