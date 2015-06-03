@@ -1,7 +1,7 @@
 class HomesController < ApplicationController
 
   def index
-    @poem = Poem.order("RAND()").first
+    @poem = DailyPoem.today_poem
   end
 
 end
