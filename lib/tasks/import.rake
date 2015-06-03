@@ -1,6 +1,17 @@
 require 'csv'
 
 
+desc "import kagga from csv"
+task :import_kagga_from_csv => :environment do
+  file_name = Rails.root.to_s + "/lib/kagga_original.csv"
+  puts "started"
+  @author = Author.create(name: 'ಡಾ. ಡಿ.ವಿ.ಗುಂಡಪ್ಪ')
+  CSV.foreach(file_name, :col_sep => ",", :headers => false) do |row|
+    Poem.create(poem_text: row[1], author_id: @author.id)
+    p ">>>>>>>>>>>>>>>>>>>>>"
+  end
+end
+
 desc "Import authors from csv"
 task :import_authors_from_csv => :environment do
   file_name = Rails.root.to_s+"/lib/daasa.csv"
