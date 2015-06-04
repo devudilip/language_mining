@@ -12,3 +12,17 @@ Dump/upload data as per schema
 Edit kn.yml file(I18)
 
 That's it!!!
+
+
+Git branches
+
+There are 2 main apps right now
+
+> Master is common fix for all apps
+  > Single Author is only for single author app
+     > Separate apps for different single author ex: kagga, sarvajna etc
+  > Multiple authore is for multiple authors app
+    > Separate apps for diff multiple authors ex: Daasa, vachana etc
+
+Merge master branch with all
+But dont merge back child branch with parent
