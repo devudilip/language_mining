@@ -5,7 +5,7 @@
         <div class="box effect5">
           <div class="vachana-concord-box">
             <div class="vachana-show-box">
-              <span>  <%= poem.poem_text %> </span>
+              <span>  <%= clean_poem(poem.poem_text) %> </span>
             </div>
             --------------
             <div class="vachanakaara-name">
@@ -27,7 +27,7 @@
           </h3>
         </div>
         <div class="modal-body vachana-pop">
-          <p id='fe_text_<%= poem.id %>'> <%= raw poem.poem_text.gsub(/\n/, '<br />') %>
+          <p id='fe_text_<%= poem.id %>'> <%= clean_poem(poem.poem_text) %>
 
           </p>
         </div>

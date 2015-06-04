@@ -8,7 +8,7 @@
       <div class="rand-vachana">
         <h3> <%= t :today_poem %> </h3>
         <p>
-          <%= @poem.poem_text %>
+          <%= clean_poem @poem.poem_text %>
         </p>
         <span class="vachanakaara-name" style="margin-left:20%;"> --- <%= @poem.author.name %> </span>
       </div>
