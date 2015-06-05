@@ -57,3 +57,7 @@ gem 'will_paginate'
 gem "font-awesome-rails"
 gem 'newrelic_rpm'
 gem 'google-analytics-rails'
+
+gem 'capistrano', '~> 3.4.0'
+gem 'capistrano-rails', '~> 1.1'
+gem 'capistrano-rvm'
