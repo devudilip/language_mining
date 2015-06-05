@@ -1,7 +1,9 @@
 module ApplicationHelper
 
   def clean_poem(text)
-    simple_format text.gsub(/\||\|\|/, '<br >')
+    # replace pipes with new line
+    #'\' line is to escape '|' character. First replacing double pipe(||) then single pipe(|)
+    simple_format text.gsub(/\|\||\|/, '<br >')
   end
 
 end
