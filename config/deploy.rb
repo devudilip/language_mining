@@ -38,7 +38,7 @@ namespace :deploy do
 
   after :finished, :server_restart do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
-      execute :touch, 'tmp:restart'
+      execute :touch, 'tmp/restart.txt'
     end
   end
 
