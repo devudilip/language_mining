@@ -4,7 +4,7 @@ module Alphabet
     #Method to collect all types of alpahbets,
     # other instance methods separated according to Kannada rule
     def all_alphabets
-      vowels #+ velars + palatals + retroflex + dentals + labials + unstructured_consonants
+      vowels + velars + palatals + retroflex + dentals + labials + unstructured_consonants
     end
 
     def vowels
