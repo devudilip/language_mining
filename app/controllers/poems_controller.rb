@@ -5,7 +5,7 @@ class PoemsController < ApplicationController
     @poems = if @author
                @author.poems.paginate(:page => params[:page], :per_page => 35)
              else
-               Poem.paginate(:page => params[:page], :per_page => 35)
+               Poem.includes(:author).paginate(:page => params[:page], :per_page => 35)
              end
   end
 
