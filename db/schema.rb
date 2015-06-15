@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141022181724) do
+ActiveRecord::Schema.define(version: 20150614192819) do
 
   create_table "authors", force: true do |t|
     t.string "pen_name"
@@ -37,6 +37,16 @@ ActiveRecord::Schema.define(version: 20141022181724) do
     t.string "book_volume"
     t.string "publisher"
     t.string "published_year"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "concords", force: true do |t|
+    t.string "name", null: false
+    t.integer "parent_id"
+    t.string "concord_code", null: false
+    t.integer "count"
+    t.text "ids"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

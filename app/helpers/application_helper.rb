@@ -6,4 +6,9 @@ module ApplicationHelper
     simple_format text.gsub(/\|\||\|/) { |sym| "#{sym} <br />" }
   end
 
+  def kannada_letters
+    require 'alphabet'
+    Alphabet::KannadaAlphabet.new.all_alphabets
+  end
+
 end

@@ -1,44 +1,18 @@
-<div class="results_list_div ">
-  <% @poems.each do |poem| %>
-
-      <a href="#myModal_<%= poem.id %>" role="button" data-toggle="modal" class="modal-pop-a">
-        <div class="box effect5">
-          <div class="vachana-concord-box">
-            <div class="vachana-show-box">
-              <span>  <%= clean_poem(poem.poem_text) %> </span>
-            </div>
-            --------------
-            <div class="vachanakaara-name">
-       <span  >
-         <%= "#{poem.author.name}" %>
-       </span>
-            </div>
-          </div>
-        </div>
-      </a>
-
-      <div id="myModal_<%= poem.id %>" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-          <h3 id="myModalLabel">
-      <span class="vachanakaara-name">
-        <%= "#{poem.author.name}" %>
-      </span>
-          </h3>
-        </div>
-        <div class="modal-body vachana-pop">
-          <p id='fe_text_<%= poem.id %>'> <%= clean_poem(poem.poem_text) %>
-
-          </p>
-        </div>
-        <div class="modal-footer">
-          <div class='demo-area'>
-
-          </div>
-        </div>
-      </div>
+<div class="search_box">
+  <%= form_tag poems_path, name: "search_poem", id: "main_search", method: :get do %>
+      <%= select_tag "author", options_from_collection_for_select(Author.all, "id", "name", params[:author]), prompt: "#{t :all}" %>
+      <%= submit_tag "#{t :search}", :disable_with => "#{t :please_wait}...", :class => 'btn btn-primary' %>
   <% end %>
-  <div class="pagination apple_pagination">
-    <%= will_paginate @poems %>
+</div>
+
+<div class="row">
+
+  <%= render 'concordance_list' %>
+
+  <div class="span10">
+    <div class="start_letter_vachana_list">
+      <%= render "poem_list" %>
+    </div>
   </div>
+
 </div>
