@@ -2,13 +2,12 @@
   <p style="text-align:center;"> ಪ್ರಾರಂಭ ಪದದ ಹುಡುಕು </p>
 
   <div class="aksharamaale">
-    <% kannada_letters.each do |letter| %>
-        <%= link_to letter, '' %>
+    <% @poem_concordances.each do |poem_concord| %>
+        <%= link_to poem_concord.name, poems_path(start_letter: poem_concord.name) %>
         <span class="vowels_count">
-        (<%= Concord.find_by(concord_code: "poem_#{letter}").count %>)
+        (<%= poem_concord.count %>)
       </span>
     <% end %>
-
   </div>
 
 

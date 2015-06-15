@@ -1,12 +1,9 @@
 class PoemsController < ApplicationController
 
   def index
-    @author = Author.find_by_id(params[:author])
-    @poems = if @author
-               @author.poems.paginate(:page => params[:page], :per_page => 35)
-             else
-               Poem.includes(:author).paginate(:page => params[:page], :per_page => 35)
-             end
+    params[:start_letter] = params[:start_letter] ? params[:start_letter] : "ಅ"
+    @poems = Poem.includes(:author).start_letter(params[:start_letter]).paginate(:page => params[:page], :per_page => 15)
+    @poem_concordances = Poem.concordance_list
   end
 
 end
