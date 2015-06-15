@@ -6,7 +6,8 @@ class Poem < ActiveRecord::Base
 
   def self.concordance_list
     concordance = Concord.find_by_concord_code(self.to_s.downcase)
-    concordance.list_all
+    # Dummy query if concordance object is nil
+    concordance ? concordance.list_all : Concord.where("id = 00")
   end
 
 end
