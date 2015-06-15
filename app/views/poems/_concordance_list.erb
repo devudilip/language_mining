@@ -3,7 +3,7 @@
 
   <div class="aksharamaale">
     <% @poem_concordances.each do |poem_concord| %>
-        <%= link_to poem_concord.name, poems_path(start_letter: poem_concord.name) %>
+        <%= link_to poem_concord.name, poems_path(start_letter: poem_concord.name), remote: true %>
         <span class="vowels_count">
         (<%= poem_concord.count %>)
       </span>
