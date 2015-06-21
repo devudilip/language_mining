@@ -36,11 +36,13 @@ set :linked_files, fetch(:linked_files, ['config/database.yml']).push('config/da
 
 namespace :deploy do
 
-  after :finished, :server_restart do
-    on roles(:web), in: :groups, limit: 3, wait: 10 do
-      execute :touch, 'tmp/restart.txt'
-    end
-  end
+  # after :finished, :server_restart do
+  #   on roles(:web), in: :groups, limit: 3, wait: 10 do
+  #     execute :touch, 'tmp/restart.txt'
+  #   end
+  # end
+
+  after 'deploy:publishing', 'deploy:restart'
 
   after :restart, :clear_cache do
     # on roles(:web), in: :groups, limit: 3, wait: 10 do
