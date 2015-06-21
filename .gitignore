@@ -18,3 +18,4 @@ config/database.yml
 .idea/
 config/deploy/
 config/deploy.rb
+lib/*.csv
