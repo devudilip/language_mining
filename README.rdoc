@@ -1,3 +1,6 @@
+<a href="https://codeclimate.com/github/devudilip/language_mining"><img src="https://codeclimate.com/github/devudilip/language_mining/badges/gpa.svg" /></a>
+
+
 Steps:
 
 Install Ruby >=2
