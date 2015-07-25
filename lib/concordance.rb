@@ -32,7 +32,9 @@ module Concordance
     @@alphabets.each do |alphabet|
       results = search_letter(alphabet)
       count = results.count
-      author_ids = results.pluck(:author_id)
+      # author_ids = results.pluck(:author_id)
+      # below line for keywords, must change logic
+      author_ids = results.pluck(:id)
       Concord.create(name: alphabet, parent_id: @parent_model.id, concord_code: "#{@model_name}_#{alphabet}", count: count, ids: author_ids)
     end
   end

@@ -2,6 +2,9 @@ class KeyWord < ActiveRecord::Base
   serialize :poem_ids
   serialize :author_ids
 
+  scope :start_letter, lambda {|letter| where("word like ? ", "#{letter}%" )}
+
+
   def create_unique_words(array_words, row_obj)
     puts "<<<<<<<<<<<<<<<<<<<,Create unique words for #{row_obj.inspect}>>>>>>>>>>>>>>>>>>>>>>>>>>"
     words = array_words
@@ -39,6 +42,13 @@ class KeyWord < ActiveRecord::Base
 
   def word_count_in_array(array,word)
     array.count(word)
+  end
+
+
+  def self.concordance_list
+    concordance = Concord.find_by_concord_code('key_word')
+    # Dummy query if concordance object is nil
+    concordance ? concordance.list_all : Concord.where("id = 00")
   end
 
 end
