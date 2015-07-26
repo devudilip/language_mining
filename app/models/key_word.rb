@@ -1,7 +1,7 @@
 class KeyWord < ActiveRecord::Base
   serialize :poem_ids
   serialize :author_ids
-
+  default_scope { order('word') }
   scope :start_letter, lambda {|letter| where("word like ? ", "#{letter}%" )}
 
 
