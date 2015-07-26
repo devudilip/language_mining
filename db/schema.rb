@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150614192819) do
+ActiveRecord::Schema.define(version: 20150719184536) do
 
   create_table "authors", force: true do |t|
     t.string   "pen_name"
@@ -57,6 +57,17 @@ ActiveRecord::Schema.define(version: 20150614192819) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "key_words", force: true do |t|
+    t.string   "word"
+    t.integer  "count"
+    t.text     "poem_ids"
+    t.text     "author_ids"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "key_words", ["word"], name: "index_key_words_on_word", using: :btree
 
   create_table "languages", force: true do |t|
     t.string   "language_code"

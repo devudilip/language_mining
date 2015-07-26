@@ -13,7 +13,7 @@ task :import_kagga_from_csv => :environment do
 end
 
 desc "Import authors from csv"
-task :import_authors_from_csv => :environment do
+task :import_authors_from_csv_1 => :environment do
   file_name = Rails.root.to_s+"/lib/daasa.csv"
   puts "started"
   CSV.foreach(file_name, :col_sep => ",", :headers => true) do |row|
@@ -25,7 +25,7 @@ end
 
 
 desc "Import authors from csv"
-task :import_poems_from_csv => :environment do
+task :import_poems_from_csv_2 => :environment do
   file_name = Rails.root.to_s+"/lib/keerthane.csv"
   puts "started"
   CSV.foreach(file_name, :col_sep => ",", :headers => true) do |row|
@@ -43,4 +43,10 @@ task :import_poems_from_csv => :environment do
     end
   end
   puts "End "
+end
+
+desc "create unique words out of poem"
+task :create_uniq_words_3 => :environment do
+  puts "started creating"
+  Poem.new.run('poem_text')
 end

@@ -1,0 +1,19 @@
+<% if @keywords and params[:start_letter] %>
+    <!-- <h3> ಪದಪುಂಜಗಳು </h3> -->
+    <p> <span class="start_letter_header">
+  <%= params[:start_letter] %> </span> ಪದದಿಂದ ಪ್ರಾರಂಭವಾಗುವ ಪದಗಳು </p>
+
+    <div class="results_list_div keywords_load">
+      <% @keywords.each do |keyword| %>
+          <div class="box effect5" style="height:auto; width:auto;">
+            <h5>
+              <%=  keyword.word %> (<span style="color:#999999"> <%= keyword.poem_ids.count %> </span> ,<span style="color:#4787AD"> <%= keyword.author_ids.uniq.count %> </span>)</h5>
+          </div>
+      <% end %>
+    </div>
+    <br />
+    <div class="pagination apple_pagination">
+      <%= will_paginate @keywords %>
+    </div>
+<% end %>
+
