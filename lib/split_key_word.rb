@@ -23,9 +23,7 @@ module SplitKeyWord
 
   def split_key_words
     puts "<<<<<<<<<<<<<<<<<<<,Split keywords >>>>>>>>>>>>>>>>>>>>>>>>>>"
-    @a= Poem.first(10)
-    # @model_name.find_each do |obj|
-    @a.each do |obj|
+    @model_name.find_each do |obj|
       words = obj.send(@column_name).squish.split(/\ |\,|\.|\;|(\n)|\|/) if obj.send(@column_name)
       # Still the below function is not independent/dynamic as it is expecting object
       KeyWord.new.create_unique_words(words, obj) unless words.blank?
