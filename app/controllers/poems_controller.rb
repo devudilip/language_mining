@@ -10,4 +10,12 @@ class PoemsController < ApplicationController
     end
   end
 
+
+  def search
+    poem = params[:poem]
+    author = params[:author]
+    @poems, @poems_count, @authors_count, @total_count = KeyWord.search_poem_word(poem, author)
+    @poems = @poems.paginate(:page => params[:page], :per_page => 15)
+  end
+
 end

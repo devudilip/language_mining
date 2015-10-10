@@ -4,7 +4,11 @@ LanguageMining::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'homes#index'
-  resources :poems
+  resources :poems do
+    collection do
+      get 'search'
+    end
+  end
   get 'key_words' => 'key_words#index'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

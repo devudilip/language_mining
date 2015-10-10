@@ -1,0 +1,19 @@
+<div class="search_box">
+  <%= form_tag search_poems_path, name: "search_poem", id: "main_search", method: :get do %>
+      <%= text_field_tag :poem, params[:poem],class: "search-query", id: "search-word", placeholder: "#{t :search}",  autocomplete: "off", :'data-provide'=> "typeahead" %>
+      <%= select_tag "author", options_from_collection_for_select(Author.all, "id", "name", params[:author]), prompt: "#{t :all}" %>
+      <%= submit_tag "#{t :search}", :disable_with => "#{t :please_wait}...", :class => 'btn btn-primary' %>
+  <% end %>
+
+</div>
+<% if @total_count %>
+    <div class=" total_count"> <p class="btn">
+      <%= t :total %> <span class="badge badge-info"> <%= @total_count %> </span>
+      <%= "#{t :in_place} , " %>
+      <span class="badge badge-info"> <%= @authors_count %> </span>
+      <%= "#{t :vachanakaararu} ," %>
+      <span class="badge badge-info"> <%= @poems_count %> </span>
+      <%= "#{t :this_word_used_in_vachanas}" %>
+    </p>  </div>
+
+<% end %>
