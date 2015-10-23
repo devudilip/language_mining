@@ -51,8 +51,12 @@ class KeyWord < ActiveRecord::Base
     concordance ? concordance.list_all : Concord.where("id = 00")
   end
 
-  def self.search_poem_word(word, author_id)
-    keywords =  KeyWord.where("word like ?", "%#{word}%")
+  def self.search_poem_word(word, author_id=nil, search_type='like_search')
+    keywords = if search_type == 'exact_search'
+                 KeyWord.where(word: word)
+               else
+                 KeyWord.where("word like ?", "%#{word}%")
+               end
     total_poem_count = total_poems_used(keywords).count
     total_author_count = total_authors_used(keywords).count
     total_word_count = total_word_occurrence(keywords)
