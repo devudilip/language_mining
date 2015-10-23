@@ -19,3 +19,4 @@ config/database.yml
 config/deploy/
 config/deploy.rb
 lib/*.csv
+deploy.sh
