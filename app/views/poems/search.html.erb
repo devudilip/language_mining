@@ -42,3 +42,16 @@
     <%= will_paginate @poems %>
   </div>
 </div>
+
+
+<script type='text/javascript'>
+
+    jQuery(function () {
+        var options = {
+            exact: "partial",
+            keys: "<%= params[:poem] %> "
+        }
+        jQuery(document).SearchHighlight(options);
+    });
+
+</script>
