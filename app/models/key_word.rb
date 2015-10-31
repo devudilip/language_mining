@@ -57,6 +57,7 @@ class KeyWord < ActiveRecord::Base
                else
                  KeyWord.where("word like ?", "%#{word}%")
                end
+    SearchHistory.update_search_word(word,search_type)
     total_poem_count = total_poems_used(keywords).count
     total_author_count = total_authors_used(keywords).count
     total_word_count = total_word_occurrence(keywords)

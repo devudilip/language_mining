@@ -12,7 +12,7 @@ class PoemsController < ApplicationController
 
 
   def search
-    poem = params[:poem]
+    poem = params[:poem].squish
     author = params[:author]
     search_type = params[:search_type]
     @poems, @poems_count, @authors_count, @total_count = KeyWord.search_poem_word(poem, author, search_type)
