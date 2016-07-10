@@ -5,10 +5,12 @@
 
     <div class="results_list_div keywords_load">
       <% @keywords.each do |keyword| %>
+        <%= link_to(search_poems_path(poem: keyword.word)) do %>
           <div class="box effect5" style="height:auto; width:auto;">
             <h5>
               <%=  keyword.word %> (<span style="color:#999999"> <%= keyword.poem_ids.count %> </span> ,<span style="color:#4787AD"> <%= keyword.author_ids.uniq.count %> </span>)</h5>
           </div>
+        <% end %>
       <% end %>
     </div>
     <br />
