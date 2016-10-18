@@ -13,83 +13,83 @@
 
 ActiveRecord::Schema.define(version: 20151031213301) do
 
-  create_table "authors", force: true do |t|
-    t.string   "pen_name"
-    t.string   "birth_place"
-    t.string   "name"
+  create_table "authors", force: :cascade do |t|
+    t.string   "pen_name",    limit: 255
+    t.string   "birth_place", limit: 255
+    t.string   "name",        limit: 255
     t.boolean  "sex"
-    t.string   "spouse"
-    t.string   "time_period"
-    t.integer  "poems_found"
-    t.text     "information"
-    t.integer  "original_id"
+    t.string   "spouse",      limit: 255
+    t.string   "time_period", limit: 255
+    t.integer  "poems_found", limit: 4
+    t.text     "information", limit: 65535
+    t.integer  "original_id", limit: 4
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "authors", ["name"], name: "index_authors_on_name", using: :btree
 
-  create_table "books", force: true do |t|
-    t.integer  "author_id"
-    t.integer  "language_id"
-    t.string   "name"
-    t.string   "book_name"
-    t.string   "book_volume"
-    t.string   "publisher"
-    t.string   "published_year"
+  create_table "books", force: :cascade do |t|
+    t.integer  "author_id",      limit: 4
+    t.integer  "language_id",    limit: 4
+    t.string   "name",           limit: 255
+    t.string   "book_name",      limit: 255
+    t.string   "book_volume",    limit: 255
+    t.string   "publisher",      limit: 255
+    t.string   "published_year", limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "concords", force: true do |t|
-    t.string   "name",         null: false
-    t.integer  "parent_id"
-    t.string   "concord_code", null: false
-    t.integer  "count"
-    t.text     "ids"
+  create_table "concords", force: :cascade do |t|
+    t.string   "name",         limit: 255,   null: false
+    t.integer  "parent_id",    limit: 4
+    t.string   "concord_code", limit: 255,   null: false
+    t.integer  "count",        limit: 4
+    t.text     "ids",          limit: 65535
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "daily_poems", force: true do |t|
-    t.integer  "poem_id"
+  create_table "daily_poems", force: :cascade do |t|
+    t.integer  "poem_id",        limit: 4
     t.date     "published_date"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "key_words", force: true do |t|
-    t.string   "word"
-    t.integer  "count"
-    t.text     "poem_ids"
-    t.text     "author_ids"
+  create_table "key_words", force: :cascade do |t|
+    t.string   "word",       limit: 255
+    t.integer  "count",      limit: 4
+    t.text     "poem_ids",   limit: 65535
+    t.text     "author_ids", limit: 65535
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "key_words", ["word"], name: "index_key_words_on_word", using: :btree
 
-  create_table "languages", force: true do |t|
-    t.string   "language_code"
-    t.string   "name"
+  create_table "languages", force: :cascade do |t|
+    t.string   "language_code", limit: 255
+    t.string   "name",          limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "poems", force: true do |t|
-    t.integer  "book_id"
-    t.integer  "author_id"
-    t.string   "name"
-    t.text     "poem_text"
-    t.integer  "original_id"
+  create_table "poems", force: :cascade do |t|
+    t.integer  "book_id",     limit: 4
+    t.integer  "author_id",   limit: 4
+    t.string   "name",        limit: 255
+    t.text     "poem_text",   limit: 65535
+    t.integer  "original_id", limit: 4
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "search_histories", force: true do |t|
-    t.text     "name"
-    t.integer  "like_search_count",  default: 0
-    t.integer  "exact_search_count", default: 0
+  create_table "search_histories", force: :cascade do |t|
+    t.text     "name",               limit: 65535
+    t.integer  "like_search_count",  limit: 4,     default: 0
+    t.integer  "exact_search_count", limit: 4,     default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
