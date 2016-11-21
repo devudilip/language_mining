@@ -20,6 +20,7 @@
 //= require jquery.ime.preferences
 //= require jquery.ime.inputmethods
 //= require SearchHighlight
+//= require highcharts
 //= require_tree .
 
 
