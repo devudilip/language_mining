@@ -41,7 +41,10 @@ module Concordance
 
   # Searches for  starting letter which is passed as parameter
   def search_letter(letter)
-    @model_name.camelcase.constantize.where("#{@column_name} like ? ", "#{letter}%")
+    # @model_name.camelcase.constantize.where("#{@column_name} like ? ", "#{letter}%")
+    # temp solution remove below line. When column strts with space we are facing this problems
+    @model_name.camelcase.constantize.where("#{@column_name} like ? or #{@column_name} like ?", "#{letter}%"," #{letter}%")
+
   end
 
 end

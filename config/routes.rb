@@ -1,4 +1,6 @@
 LanguageMining::Application.routes.draw do
+  get 'authors/index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -10,6 +12,7 @@ LanguageMining::Application.routes.draw do
     end
   end
   get 'key_words' => 'key_words#index'
+  resources 'authors'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

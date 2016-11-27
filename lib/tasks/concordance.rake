@@ -11,3 +11,8 @@ task :update_concordance_for_key_words_5 => :environment do
 end
 
 
+desc "concordance for Author"
+task :update_concordance_for_authors_5 => :environment do
+  puts ">>>>>>>>>>>>>>Start >>>>>>>>>"
+  Concord.new.run('author', 'name')
+end
