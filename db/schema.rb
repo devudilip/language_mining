@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151031213301) do
+ActiveRecord::Schema.define(version: 20161101160103) do
 
   create_table "authors", force: :cascade do |t|
     t.string   "pen_name",    limit: 255
@@ -42,11 +42,11 @@ ActiveRecord::Schema.define(version: 20151031213301) do
   end
 
   create_table "concords", force: :cascade do |t|
-    t.string   "name",         limit: 255,   null: false
+    t.string   "name",         limit: 255,        null: false
     t.integer  "parent_id",    limit: 4
-    t.string   "concord_code", limit: 255,   null: false
+    t.string   "concord_code", limit: 255,        null: false
     t.integer  "count",        limit: 4
-    t.text     "ids",          limit: 65535
+    t.text     "ids",          limit: 4294967295
     t.datetime "created_at"
     t.datetime "updated_at"
   end
