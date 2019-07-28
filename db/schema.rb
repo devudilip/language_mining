@@ -61,8 +61,8 @@ ActiveRecord::Schema.define(version: 20151031213301) do
   create_table "key_words", force: :cascade do |t|
     t.string   "word",       limit: 255
     t.integer  "count",      limit: 4
-    t.text     "poem_ids",   limit: 65535
-    t.text     "author_ids", limit: 65535
+    t.text     "poem_ids",   limit: 4294967295
+    t.text     "author_ids", limit: 4294967295
     t.datetime "created_at"
     t.datetime "updated_at"
   end
