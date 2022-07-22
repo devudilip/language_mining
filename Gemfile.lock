@@ -187,7 +187,7 @@ GEM
       libv8 (~> 3.16.14.0)
       ref
     thor (0.19.1)
-    thread_safe (0.3.5)
+    thread_safe (0.3.6)
     tilt (1.4.1)
     turbolinks (5.0.0)
       turbolinks-source (~> 5)
@@ -197,7 +197,7 @@ GEM
       execjs
       rails (>= 3.1)
       railties (>= 3.1)
-    tzinfo (1.2.2)
+    tzinfo (1.2.10)
       thread_safe (~> 0.1)
     uglifier (3.0.0)
       execjs (>= 0.3.0, < 3)
